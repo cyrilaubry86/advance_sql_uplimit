@@ -32,7 +32,7 @@ from vk_data.customers.customer_address as ca
 inner join vk_data.customers.customer_data c
     on ca.customer_id = c.customer_id
 left join vk_data.resources.us_cities us 
-    on upper(rtrim(ltrim(ca.customer_state))) = upper(TRIM(us.state_abbr))
+    on upper(rtrim(ltrim(ca.customer_state))) = upper(trim(us.state_abbr))
     and trim(lower(ca.customer_city)) = trim(lower(us.city_name))
 inner join survey_active_food_count safc
     on c.customer_id = safc.customer_id
